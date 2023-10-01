@@ -1,9 +1,11 @@
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import Navbar from './components/common/navBar'
-
+import { motion, AnimatePresence } from 'framer-motion';
+import ThumbsUp from './components/common/thumbsUp';
 const inter = Inter({ subsets: ['latin'] })
 const cardStyle: React.CSSProperties = {
   width: '80vw',
@@ -30,16 +32,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{backgroundColor:"violet"}} className={inter.className} >
-       
+      <body style={{ backgroundColor: "violet" }} className={inter.className} >
+
         <div >
-        <Navbar/>{children}
+          <Navbar />{children}
+          <ThumbsUp/>
         </div>
-        
-        
-  
-        </body>
-        
+
+
+
+      </body>
+
     </html>
   )
 }
